@@ -1,4 +1,4 @@
-package HelloWorld;
+package main;
 
 import java.awt.EventQueue;
 
