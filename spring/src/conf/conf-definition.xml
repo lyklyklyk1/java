@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.lyk.spring.definition.HelloWorldImpl"></bean>
+    <bean id="helloWorld" class="com.lyk.spring.definition.HelloWorldImpl"></bean>
+    <bean name="helloWorldByName" class="com.lyk.spring.definition.HelloWorldImpl"></bean>
+    <bean id="helloWorldById" name="helloWorldByName01" class="com.lyk.spring.definition.HelloWorldImpl"></bean>
+    <bean id="helloWorldWithNoArgs" class="com.lyk.spring.definition.HelloWorldImpl"></bean>
+    <bean id="helloWorldWithArgs" class="com.lyk.spring.definition.HelloWorldImpl">
+        <constructor-arg name="message" value="Hello Args"></constructor-arg>
+    </bean>
+    <bean id="helloWorldStatiFactory" class="com.lyk.spring.definition.HelloWorldStaticFactory" factory-method="newInstance" >
+        <constructor-arg index="0" value="Hello Static Factory"></constructor-arg>
+    </bean>
+    <bean id="beanInstanceFactory" class="com.lyk.spring.definition.HelloWorldInstanceFactory"></bean>
+    <bean id="helloWorldInstaceFactory" factory-bean="beanInstanceFactory" factory-method="newInstance" >
+        <constructor-arg index="0" value="Hello Instance Factory"></constructor-arg>
+    </bean>
+</beans>
